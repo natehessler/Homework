@@ -6,6 +6,6 @@ let greeting = 'Welcome to ${pizzaPlace} where we offer ${numberoftoppings} topp
 if (numberOfToppings < 10) {
   console.log("Quality, not quantity.");
 }
-if (numberOfToppings > 10) {
+if (numberOfToppings >= 10) {
   console.log("A whole lot of pizza.");
 }
