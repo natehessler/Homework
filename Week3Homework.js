@@ -1,49 +1,51 @@
-// #1
+// 1.
 
-const pizzaToppings = [' sausage', ' pepperoni', ' onion', ' bacon '];
+const pizzaToppings = ['Sausage', 'Pepperoni', 'Onion', 'Peppers',];
 
-
-// #2
+// 2.
 
 function greetCustomer() {
-  console.log("Thank you for coming to Nate's Pizza! See here for our topping options:")
+  let toppings = '';
+  for (let element of pizzaToppings) {
+    toppings += element + ' '
+  };
+  return console.log(`Welcome to Nate's Pizza in St. Louis! The toppings we offer are: ${toppings}`);
+};
+
+// 3.
+
+function getPizzaOrder(size,crust,...toppings) {
+  let pizzaArray =[size,crust,toppings];
+  console.log(`One ${pizzaArray[0]} ${pizzaArray[1]} crust pizza with ${pizzaArray[2]} coming up!`);
+  return pizzaArray;
+  }
+
+// 4.
+
+
+function preparePizza(arrayParam){
+  let pizzaObject = {
+    size: arrayParam[0],
+    crust: arrayParam[1],
+    toppings: arrayParam[2],
+  }
+  console.log("Your pizza is cooking now");
+  return pizzaObject;
 }
+
+/* 5. Create a servePizza function that:
+-has a parameter of a pizza Object
+-logs a message that the pizza is ready and repeats the order, i.e. "Order up! Here's your large thick crust pizza with x,y,z, ...enjoy!"
+-outputs the same pizza Object that was passed in */
+
+
+function servePizza(objectParam) {
+  console.log(`Get it while it's hot! Here's your ${objectParam.size} ${objectParam.crust} crust pizza with ${objectParam.toppings}!`);
+  return objectParam;
+}
+
+/* 6. Call each function and (starting with preparePizza) use the returned value from the previous function as its input.
+No hard-coding necessary in this part. */
+
 greetCustomer();
-
-for (let topping of pizzaToppings) {
-  console.log(topping);
- }
-
-// #3
-
-let pizzaSize = 'Medium';
-let pizzaCrust = 'Hand Tossed';
-let repeatOrder;
-
-function getPizzaOrder(){
-
-  repeatOrder = `One ${pizzaSize} ${pizzaCrust} pizza with`;
-  return repeatOrder;
-}
-
-getPizzaOrder();
-console.log(repeatOrder + pizzaToppings + "coming in just a moment!");
-
-
-// #4
-
-function preparePizza = [pizzaSize, pizzaCrust, pizzaToppings] {
-  console.log("Preparing pizza with" + preparePizza)
-}
-
-// #5
-
-function servePizza()
-
-// #6
-
-// An example output for this assignment is:
-// Welcome to The Pizza House, our toppings are: pepperoni, sausage, onions, peppers,
-// One large thin crust pizza with sausage, onions, peppers, .
-// Coming up! ...your pizza is cooking... Order up!
-// Here's your large thin crust pizza with sausage, onions, peppers, . Enjoy!
+servePizza(preparePizza(getPizzaOrder('large','thick','Sausage','Pepperoni','Onion','Peppers')));
