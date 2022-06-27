@@ -33,19 +33,14 @@ function preparePizza(arrayParam){
   return pizzaObject;
 }
 
-/* 5. Create a servePizza function that:
--has a parameter of a pizza Object
--logs a message that the pizza is ready and repeats the order, i.e. "Order up! Here's your large thick crust pizza with x,y,z, ...enjoy!"
--outputs the same pizza Object that was passed in */
-
+// 5.
 
 function servePizza(objectParam) {
   console.log(`Get it while it's hot! Here's your ${objectParam.size} ${objectParam.crust} crust pizza with ${objectParam.toppings}!`);
   return objectParam;
 }
 
-/* 6. Call each function and (starting with preparePizza) use the returned value from the previous function as its input.
-No hard-coding necessary in this part. */
+// 6.
 
 greetCustomer();
 servePizza(preparePizza(getPizzaOrder('large','thick','Sausage','Pepperoni','Onion','Peppers')));
